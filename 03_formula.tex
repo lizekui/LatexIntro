@@ -1,0 +1,210 @@
+%************************************************
+\section{数学公式}
+\begin{frame}[fragile]\frametitle{传说中的方便插入公式？}
+article中的两种公式：
+    \begin{itemize}
+      \hidark<1> \item 行内公式(inline mode)
+        \begin{itemize}
+          \hidark<2> \item \textbackslash ( \ldots \textbackslash )
+		  \hidark<3> \item \textbackslash begin\{math\} \ldots \textbackslash end\{math\}
+		  \hidark<4> \item \$ \ldots \$
+        \end{itemize}
+      \hidark<5> \item 行间公式(display mode)
+        \begin{itemize}
+          \hidark<6> \item \textbackslash begin\{equation\} \ldots \textbackslash end\{equation\}
+		  \hidark<7> \item \textbackslash [ \ldots \textbackslash ]
+		  \hidark<8> \item \textbackslash begin\{displaymath\} \ldots \textbackslash end\{displaymath\}
+		  \hidark<9> \item \$\$ \ldots \$\$
+        \end{itemize}
+      \hidark<10> \item 多行公式
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{用例子说明两种公式的区别}
+    \begin{block}{Input}
+    \begin{verbatim}
+I know that you know $1+1=2$, but I know $2-1=1$, which you
+don't know. Now look at it $$2-1=1$$ I DO know more than you
+    \end{verbatim}
+    \end{block}
+    \begin{block}{Output}
+        I know that you know $1+1=2$, but I know $2-1=1$, which you don't know. Now look at it $$2-1=1$$ I DO know more than you.
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{分式、上下标和开方}
+    \begin{block}{Input}
+    \begin{verbatim}
+$$\frac{2011}{2012}, x_1,x_2,\ldots,x_n, a^2+b^2=c^2,
+x_1^2+x_2^2+\ldots+x_n^2=r^{100}, \sqrt{x+1},
+\sqrt[3]{x^2+1}$$
+    \end{verbatim}
+    \end{block}
+    \begin{block}{Output}
+        $$\frac{2011}{2012}, x_1,x_2,\ldots,x_n, a^2+b^2=c^2, x_1^2+x_2^2+\ldots+x_n^2=r^{100}, \sqrt{x+1}, \sqrt[3]{x^2+1}$$
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{三角函数}
+    \begin{block}{Input}
+    \begin{verbatim}
+$$\sin x, \cos x, \tan x, \arctan x, \sinh x, \cosh x,
+\max x, \min x, \ln x, \log x, \log_2 x.$$
+    \end{verbatim}
+    \end{block}
+    \begin{block}{Output}
+        $$\sin x, \cos x, \tan x, \arctan x, \sinh x, \cosh x, \max x, \min x
+        , \ln x, \log x, \log_2 x.$$
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{求和、极限和积分}
+    \begin{block}{Input}
+    \begin{verbatim}
+$$\lim_{n \to \infty} a_n = 1, \sum_{n=1}^{\infty} n = 5050,
+\int_{a}^{b}f(x) \mathrm{d}x = I$$
+    \end{verbatim}
+    \end{block}
+    \begin{block}{Output}
+        $$\lim_{n \to \infty} a_n = 1, \sum_{n=1}^{\infty} n = 5050,
+        \int_{a}^{b}f(x) \mathrm{d}x = I$$
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{关系符号、希腊字母和部分数学标记}
+    \begin{block}{Input}
+    \begin{verbatim}
+$$a \times b, c \div d, a<b , b=c, c \neq d, d > e,
+e \geq f, f \leq g $$
+$$\alpha\beta\gamma\delta\epsilon\varepsilon\xi\pi
+\rho\sigma\eta\theta\phi\varphi\omega$$
+$$|A|, \|A\|, \vec{a}, \overrightarrow{AB}, \tilde{x},
+\widetilde{xyz}, \mathrm{sin}$$
+    \end{verbatim}
+    \end{block}
+    \begin{block}{Output}
+        $$a \times b, c \div d, a<b , b=c, c \neq d, d > e, e \geq f, f \leq g $$
+        $$\alpha\beta\gamma\delta\epsilon\varepsilon\xi\pi\rho\sigma\eta
+        \theta\phi\varphi\omega ,|A|, \|A\|, \vec{a}, \overrightarrow{AB}, \tilde{x},
+        \widetilde{xyz}, \mathrm{sin}$$
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{矩阵}
+  \begin{columns}
+    \begin{column}{0.05\textwidth}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+    \begin{block}{Input}
+    \begin{verbatim}
+\begin{equation}
+\left(
+\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{array}
+\right)
+\end{equation}
+    \end{verbatim}
+    \end{block}
+    \end{column}
+    \begin{column}{0.025\textwidth}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+    \begin{block}{Output}
+        \begin{equation}
+        \left(
+        \begin{array}{ccc}
+        a_{11} & a_{12} & a_{13} \\
+        a_{21} & a_{22} & a_{23} \\
+        a_{31} & a_{32} & a_{33}
+        \end{array}
+        \right)
+        \end{equation}
+    \end{block}
+    \end{column}
+    \begin{column}{0.025\textwidth}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{矩阵v2.0}
+  \begin{columns}
+    \begin{column}{0.05\textwidth}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+    \begin{block}{Input}
+    \begin{verbatim}
+\begin{equation}
+\left\{
+\begin{array}{c||c|c}
+a_{11} & a_{12} & \\
+\hline
+a_{21} & & a_{23} \\
+& a_{32} & a_{33}
+\end{array}
+\right)
+\end{equation}
+    \end{verbatim}
+    \end{block}
+    \end{column}
+    \begin{column}{0.025\textwidth}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+    \begin{block}{Output}
+        \begin{equation}
+        \left\{
+        \begin{array}{c||c|c}
+        a_{11} & a_{12} & \\
+        \hline
+        a_{21} & & a_{23} \\
+        & a_{32} & a_{33}
+        \end{array}
+        \right)
+        \end{equation}
+    \end{block}
+    \end{column}
+    \begin{column}{0.025\textwidth}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{分段函数}
+  \begin{columns}
+    \begin{column}{0.05\textwidth}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+    \begin{block}{Input}
+    \begin{verbatim}
+\begin{equation}
+\chi_A(x)=
+\left\{
+\begin{array}{ll}
+1, & x \in A \\
+0, & x \not\in A
+\end{array}
+\right.
+\end{equation}
+    \end{verbatim}
+    \end{block}
+    \end{column}
+    \begin{column}{0.025\textwidth}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+    \begin{block}{Output}
+        \begin{equation}
+        \chi_A(x)=
+        \left\{
+        \begin{array}{ll}
+        1, & x \in A \\
+        0, & x \not\in A
+        \end{array}
+        \right.
+        \end{equation}
+    \end{block}
+    \end{column}
+    \begin{column}{0.025\textwidth}
+    \end{column}
+  \end{columns}
+\end{frame}

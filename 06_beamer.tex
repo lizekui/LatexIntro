@@ -1,0 +1,149 @@
+%************************************************
+\section{Beamer}
+\begin{frame}\frametitle{Beamer简介}
+Beamer 是一个用于制作演示文稿的LaTeX 文档类，由Till
+Tantau 编写。相对于其它同类工具，Beamer 有如下这些优点：
+\begin{itemize}
+    \item<2-> \textcolor{red}{标准统一}。标准的 \LaTeX{} 指令在 Beamer 文稿中可直接使用;
+    \item<3-> \textcolor{red}{主题丰富}。提供了许多主题 (theme)，可以很容易改善简档的外观；
+    \item<4-> \textcolor{red}{注重内容}。致力于更好的表现演讲内容，而不是仅仅为了让页面好看;
+    \item<5-> \textcolor{red}{方便定制}。页面布局、色彩、字体都可以实现全局调控；
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{hello\_beamer.tex}
+\begin{block}{}
+    \begin{verbatim}
+\documentclass{beamer}
+\begin{document}
+\begin{frame}
+Hello Beamer!
+\end{frame}%
+\end{document}
+    \end{verbatim}
+\end{block}
+从这个例子可以看出，Beamer 中每张幻灯片的内容都是放置在一个frame 环境里面的。
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{hello\_beamer\_CN.tex}
+\begin{block}{}
+    \begin{verbatim}
+\documentclass{beamer}
+\usepacakge[UTF8]{ctex}
+\begin{document}
+\begin{frame}
+你好Beamer！
+\end{frame }
+\end{document}
+    \end{verbatim}
+\end{block}
+对于中文文档，建议用UTF8 编码，然后用xelatex 程序编译。
+另外，可以在载入ctex 宏包时加上noindent 选项以取消段落
+的缩进。
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Beamer基本语法}
+\begin{block}{}
+    \begin{verbatim}
+\begin{frame}{幻灯片标题}{我是一个副标题}
+Hello Beamer!
+\end{frame }
+    \end{verbatim}
+\end{block}
+或者
+\begin{block}{}
+    \begin{verbatim}
+\begin{frame}
+\frametitle{幻灯片标题}
+\framesubtitle{我是一个副标题}
+Hello Beamer!
+\end{frame }
+    \end{verbatim}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Beamer文档结构}
+在Beamer文档中，最常用的分节命令是\textbackslash section：
+\begin{block}{}
+    \begin{verbatim}
+\section{Section Name}
+    \end{verbatim}
+\end{block}
+类似于标题页面，我们可以在幻灯片中用\textbackslash tableofcontents 命令生成目录页。
+\begin{block}{}
+    \begin{verbatim}
+\begin{frame}
+\tableofcontents[hideallsubsections]
+\end{frame }
+    \end{verbatim}
+\end{block}
+其中hideallsubsections 选项表示不显示小节标题。
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{简单的列表环境}
+\begin{block}{}
+    \begin{verbatim}
+\begin{itemize}
+\item<1-> 我是第一项
+\item<2-> 我是第二项
+\item<3-> 我是第三项
+\end{itemize}
+    \end{verbatim}
+\end{block}
+\begin{block}{}
+\begin{itemize}
+\item<1-> 我是第一项
+\item<2-> 我是第二项
+\item<3-> 我是第三项
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{简单的区块环境}
+\begin{block}{}
+    \begin{verbatim}
+\begin{block}{区块环境}
+区块环境为了突出显示某些内容。
+\end{block}
+    \end{verbatim}
+\end{block}
+\begin{block}{区块环境}
+区块环境为了突出显示某些内容。
+\end{block}
+\begin{alertblock}{警示区块环境}
+警示区块环境为了警示突出某些内容。
+\end{alertblock}
+\begin{exampleblock}{例子区块环境}
+例子区块环境为了突出例子内容。
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}\frametitle{beamer themes}
+Beamer 的整体主题包含了结构、颜色、字体各方面的设置。
+\begin{block}{}
+\textbackslash usebeamertheme\{主题名\}
+\end{block}
+\begin{description}
+    \item[无导航栏] 无导航栏default、boxes、Bergen、Pittsburgh 和 Rochester。
+    \item[带顶栏] Antibes、Darmstadt、Frankfurt、JuanLesPins、Montpellier 和Singapore。
+    \item[带底栏] Boadilla 和Madrid。
+    \item[带顶栏底栏] AnnArbor、Berlin、CambridgeUS、Copenhagen、Dresden、Ilmenau、Luebeck、Malmoe、Szeged 和Warsaw。
+    \item[带侧栏] Berkeley、Goettingen、Hannover、Marburg 和 PaloAlto。
+\end{description}
+
+\begin{center}
+    \footnotesize{\url{http://deic.uab.es/~iblanes/beamer_gallery/}}
+    \footnotesize{\url{http://www.hartwork.org/beamer-theme-matrix/}}
+\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{主题DIY}
+Beamer 的各部分的内容都可以自己定制和修改，和主题的划分
+类似，可以从如下这三个方面来定制自己的主题：
+
+\begin{description}
+    \item[定制模板] 用\textbackslash setbeamertemplate 命令
+    \item[定制颜色] 用\textbackslash setbeamercolor 命令
+    \item[定制字体] 用\textbackslash setbeamerfont 命令
+\end{description}
+\end{frame}

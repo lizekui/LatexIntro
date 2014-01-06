@@ -1,0 +1,78 @@
+% !Mode::"TeX:UTF-8"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%     这是一份 beamer 文档. 本源文件仅供学习 beamer 参考之用.           %%%
+%%%     使用请注明出处. 本文作者拥有版权 (c)2014. 保留所有权利.           %%%
+%%%                                                                       %%%
+%%%     使用XeLaTeX直接编译即可，注意打开时的编码方式为UTF-8 ^_^          %%%
+%%%     作者: 李泽魁 (http://ir.hit.edu.cn/~zkli/)  2014-01-06            %%%
+%%%                                                                       %%%
+%%%          感谢Slides最后参考文献中的诸多大牛们的无私奉献！             %%%
+%%%                       共同学习，共同进步！                            %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[notheorems]{beamer}
+\usepackage[UTF8,noindent]{ctex}
+\usepackage[english]{babel}   %如果去掉，中英混合会出错
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{tikz}
+\usetheme{Madrid}
+\usepackage{graphicx}                          % 比graphics先进
+\usepackage{subfigure}                         % 子图并排
+\usepackage{picins}                            % 图片嵌入段落宏包 比如照片
+\usepackage{verbatim}                          % 照写区
+\usepackage{listings}                          % 代码
+\usepackage{xcolor}                            % 使用颜色宏包
+\usepackage{algorithm}                         % format of the algorithm
+\usepackage{algorithmic}
+\usepackage{xltxtra}                           %logos
+\usepackage{mflogo,texnames}
+
+
+\graphicspath{{images/}}                       %图片路径
+
+%==============自定义: 逐个 item 高亮(\hilite), 或"高黑"(\hidark)==================%
+\def\hilite<#1>{%
+\temporal<#1>{\color{blue!35}}{\color{magenta}}%
+{\color{blue!75}}}
+\def\hidark<#1>{%
+\temporal<#1>{\color{black!35}}{\color{magenta}}%
+{\color{black}}}
+
+%====================== metapost =================================================%
+\usepackage{xmpmulti}  %% metapost 动画.
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+
+\begin{document}
+%%-------------------------------------------------
+\title{\LaTeX~入门}
+\author[zkli]{\href{http://ir.hit.edu.cn/~zkli/}{zkli}\\[0.5em]{\color{blue!70}\texttt{zkli@ir.hit.edu.cn}}\\}
+\institute[哈尔滨工业大学~SCIR研究中心]{\kaishu\textcolor{olive}{\href{http://www.hit.edu.cn/}{哈尔滨工业大学}~~\href{http://ir.hit.edu.cn/}{SCIR研究中心}}}
+\date{}
+\titlegraphic{\includegraphics[height=2cm]{hit_logo}\qquad \includegraphics[height=1.8cm]{scir_logo}}
+\frame{\titlepage}
+%%-------------------------------------------------
+
+\begin{frame}\frametitle{目录}\small
+\tableofcontents
+\end{frame}
+\input{00_what-is-latex.tex}
+
+\input{01_hello-latex.tex}
+
+\input{02_chapter-paragragh.tex}
+
+\input{03_formula.tex}
+
+\input{04_algorithm-code-tarbular-image-cite.tex}
+
+\input{05_cn-support.tex}
+
+\input{06_beamer.tex}
+
+\input{07_reference.tex}
+
+\input{08_useful-tools.tex}
+
+\input{09_end.tex}
+\end{document} 

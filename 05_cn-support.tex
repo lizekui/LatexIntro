@@ -1,0 +1,80 @@
+%************************************************
+\section{中文支持}
+\begin{frame}\frametitle{中文支持}
+    \begin{itemize}
+        \item<1-> CJK
+            \begin{itemize}
+              \item<2-> 一个德国人开发的中、日、韩文字处理包
+              \item<3-> 是 \LaTeX{} 系统的一个宏包，比较通用
+            \end{itemize}
+        \item<4-> CCT
+            \begin{itemize}
+              \item<5-> 中科院张林波教授开发的中文系统
+              \item<6-> 中文字体比较多，排版方式考虑中文使用习惯
+              \item<7-> 缺点是需要进行预处理，引入其它LaTeX资源时会有一些问题
+            \end{itemize}
+        \item<8-> 天元
+            \begin{itemize}
+              \item<9-> 华东师大的肖刚、陈志杰等开发的中文 \TeX{}系统
+            \end{itemize}
+        \item<10-> \XeLaTeX{}
+            \begin{itemize}
+              \item<11-> 从底层支持中文
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{CJK中文支持}
+\begin{block}{CJK格式}
+    \begin{verbatim}
+\documentclass{article}
+\usepackage{CJK}
+\begin{document}
+\begin{CJK*}{GBK}{kai}
+这是中文楷体字。
+\end{CJK*}
+\end{document}
+    \end{verbatim}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{CCT中文支持}
+\begin{block}{老版本CCT格式}
+    \begin{verbatim}
+\documentclass{cctart}
+\begin{document}
+\kaishu 这是中文楷体字。
+\end{document}
+    \end{verbatim}
+\end{block}
+
+\begin{block}{新版本CCT格式}
+    \begin{verbatim}
+\documentclass[CJK]{cctart}
+\begin{document}
+\kaishu 这是中文楷体字。
+\end{document}
+    \end{verbatim}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\XeLaTeX{} 中文支持}
+\begin{block}{\XeLaTeX{} 格式1 (编码保存为UTF-8)}
+    \begin{verbatim}
+\documentclass{ctexart}
+\begin{document}
+中文宏包测试
+\end{document}
+    \end{verbatim}
+\end{block}
+
+\begin{block}{\XeLaTeX{}格式2}
+    \begin{verbatim}
+\documentclass{article}
+\usepackage{ctex}
+\begin{document}
+中文宏包测试
+\end{document}
+    \end{verbatim}
+\end{block}
+\end{frame}

@@ -1,0 +1,84 @@
+%************************************************
+\section{参考文献}
+\begin{frame}[fragile]\frametitle{参考文献}
+主要介绍两种方法：
+\begin{enumerate}
+    \item<2-> 手工输入法
+    \item<3-> \BibTeX{}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{参考文献手工输入法}
+\begin{block}{}
+    \begin{verbatim}
+As is stated in \cite{bibitem1} \dots
+\begin{thebibliography}{9}
+ \bibitem{bibitem1} 大傻瓜.如何做一个合格的大傻瓜[M].傻瓜帝国:傻瓜出版社.2013.
+ \bibitem{bibitem2} 小傻瓜.如何成为一个大傻瓜[M].傻瓜帝国:傻瓜出版社.2013.
+\end{thebibliography}
+    \end{verbatim}
+\end{block}
+\begin{block}{}
+As is stated in \cite{bibitem1} \dots
+\begin{thebibliography}{9}
+ \bibitem{bibitem1} 大傻瓜.如何做一个合格的大傻瓜[M].傻瓜帝国:傻瓜出版社.2013.
+ \bibitem{bibitem2} 小傻瓜.如何成为一个大傻瓜[M].傻瓜帝国:傻瓜出版社.2013.
+\end{thebibliography}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{传说中的高级玩法\BibTeX{}}
+\BibTeX{} 是一个使用数据库的的方式来管理参考文献程序, 用于协调LaTeX的参考文献处理.
+\begin{block}{}
+    \begin{verbatim}
+@article{Gettys90,
+author = {Jim Gettys and Phil Karlton and Scott McGregor},
+title = {The {X} Window System, Version 11},
+journal = {Software Practice and Experience},
+volume = {20},
+year = {1990},
+abstract = {A technical overview of the X11 functionality.}
+}
+    \end{verbatim}
+\end{block}
+\BibTeX{} 文件的后缀名为 .bib
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\LaTeX{}中用\BibTeX{}}
+\begin{block}{}
+    \begin{verbatim}
+As is stated in \cite{fool} \dots
+\bibliographystyle{plain}
+\nocite{*}\bibliography{reference}
+    \end{verbatim}
+\end{block}
+\begin{block}{}
+    As is stated in \cite{fool} \dots
+    \bibliographystyle{plain}
+    \nocite{*}\bibliography{reference}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{\LaTeX{}中\BibTeX{}的编译流程}
+\begin{block}{}
+    \center
+    \XeLaTeX{} $\color{red!70}\Longrightarrow{}$ \BibTeX{} $\color{red!70}\Longrightarrow$ \XeLaTeX{} $\color{red!70}\Longrightarrow$ \XeLaTeX{}
+\end{block}
+每步的解释：
+\begin{enumerate}
+    \item<2-> 用\XeLaTeX{} 编译你的 .tex 文件 , 这是生成一个 .aux 的文件, 这告诉\BibTeX{} 将使用那些引用
+    \item<3-> 用\BibTeX{} 编译 .bib 文件 ,后台将 .bst文件和 .bib文件编译成 .bbl文件
+    \item<4-> 再次用\XeLaTeX{} 编译你的 .tex 文件, 这个时候在文档中已经包含了参考文献, 但此时引用的编号可能不正确
+    \item<5-> 最后用\XeLaTeX{} 编译你的 .tex 文件, 如果一切顺利的话, 这是所有东西都已正常了
+\end{enumerate}
+\end{frame}
+
+\begin{frame}\frametitle{\BibTeX{}管理辅助软件}
+如果要管理大量参考文献，就需要接下来讲的\BibTeX{}管理辅助软件了，这里我们主要介绍JabRef：
+\begin{enumerate}
+    \item<2-> 自动导入。支持CiteSeer、JSTOR、SPIRES、IEEEXplore、ArXiv.org、ACM Portal、Medline以及ScienceDirect 八大电子资源数据库的文献查找和索引自动导入功能。
+    \item<3-> 转换方便。支持不同文献索引格式文件的导入和导出。可以广泛读取其他文献管理工具，如EndNote、Reference Manager、Refworks等保存的文献索引格式。
+    \item<4-> 自动分类。支持任意分类和自动分类，可自动根据题目、作者、关键词或摘要自动分类。
+    \item<5-> 兼容性强。支持在各种LaTex编辑器中和很多文本编辑器中插入文献记录，可以推送文献索引至写作文档。
+\end{enumerate}
+\end{frame} 
